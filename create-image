@@ -24,7 +24,7 @@ puts $imagePath\n
 # aarch64 image
 # spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img marcelodsales/dockerpi pi3
 # working image for bookworm
-spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img dockertomschmidt/qemu-aarch64-pi:latest
+spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img you54f/qemu-aarch64-pi:2023-12-05-raspios-bullseye-arm64-lite
 expect "raspberrypi login: "
 #FIXME: This is a hack to make sure the system is in a ready state to accept the user credentials.
 sleep 7
