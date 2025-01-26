@@ -22,8 +22,9 @@ puts $imagePath\n
 
 # spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img lukechilds/dockerpi:vm pi3
 # aarch64 image
-spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img marcelodsales/dockerpi pi3
-
+# spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img marcelodsales/dockerpi pi3
+# working image for bookworm
+spawn docker run --name dockerpi -it --rm -v $imagePath:/sdcard/filesystem.img dockertomschmidt/qemu-aarch64-pi:latest
 expect "raspberrypi login: "
 #FIXME: This is a hack to make sure the system is in a ready state to accept the user credentials.
 sleep 7
